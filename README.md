@@ -10,11 +10,18 @@ This project analyzes heart rate data from Garmin trackers for the Sphere study,
 - **notebooks/**: Jupyter notebooks for data analysis
   - *template_data_exploration.ipynb*: Template notebook with standard analysis workflow
   - *user_XX_data_exploration.ipynb*: User-specific analysis notebooks
-- **output/processed/**: Contains processed CSV files with station data
+- **output/**:
+  - **plots/**: Visualizations for each user
+    - *user_XX/*: User-specific directories containing standardized plots
+  - **processed/**: Contains processed CSV files with station data
 - **scripts/**: Utility scripts
   - *parse_tcx.py*: Parses TCX files into pandas DataFrames
-  - *update_notebooks.py*: Creates notebooks from template
+  - *create_user_notebooks.py*: Creates user notebooks from template
   - *update_existing_notebooks.py*: Updates existing notebooks
+  - *fix_alignment_parameters.py*: Ensures consistent alignment parameters
+  - *fix_plots_dir.py*: Adds plot directory creation to notebooks
+  - *fix_plot_saving.py*: Ensures all three key plots are saved in notebooks
+  - *update_station_processing.py*: Updates station boundary processing
 
 ## Getting Started
 
@@ -46,6 +53,17 @@ Each user notebook follows this workflow:
 5. **Define stations**: Identify and mark the three stations
 6. **Process**: Extract station-specific data
 7. **Save**: Export the processed data to CSV
+8. **Plot**: Save standardized visualizations to the output/plots directory
+
+## Standard Visualizations
+
+Each notebook now generates and saves three standard visualizations:
+
+1. **Heart Rate Over Time**: Basic time-series plot of heart rate data
+2. **Aligned HR Data**: Heart rate data aligned with Garmin chart background
+3. **Heart Rate with Stations**: Heart rate data with station boundaries marked
+
+These plots are saved to user-specific directories in `output/plots/user_XX/`.
 
 ## Batch Processing
 
@@ -53,6 +71,12 @@ To update all user notebooks with the latest code:
 
 ```bash
 python scripts/update_existing_notebooks.py
+```
+
+To ensure all notebooks have proper plot saving functionality:
+
+```bash
+python scripts/fix_plot_saving.py
 ```
 
 ## Requirements

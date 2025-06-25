@@ -1,61 +1,47 @@
-# Sphere Heart Rate Analysis Scripts
+# Scripts Directory
 
-This directory contains utility scripts for the heart rate analysis project.
+This directory contains scripts for processing and managing the Sphere Heart Rate Analysis project.
+
+## Scripts Overview
+
+- `parse_tcx.py` - Parses TCX files into pandas DataFrames for analysis
+- `create_user_notebooks.py` - Creates template notebooks for each user ID
+- `update_existing_notebooks.py` - Updates existing user notebooks with new features
+- `fix_alignment_parameters.py` - Fixes alignment parameters in notebooks to ensure consistent visualization 
+- `fix_plots_dir.py` - Adds plot directory creation to notebooks
+- `add_plot_saving.py` - Adds plot saving functionality to notebooks
+- `fix_plot_saving.py` - Ensures all three key plots are properly saved in all notebooks
+- `update_station_processing.py` - Updates station boundary processing in notebooks
+
+## Usage
+
+### fix_plot_saving.py
+
+This script ensures all three key plots are properly saved in each user's data exploration notebook:
+1. Heart Rate Over Time
+2. Aligned HR Data with Garmin Chart
+3. Heart Rate with Station Boundaries
+
+The script modifies all user_*_data_exploration.ipynb files in the notebooks directory to:
+- Ensure plots_dir is properly defined
+- Add proper plot saving code for all three visualization types
+- Maintain code style consistency
+
+Each modified notebook is backed up before changes are made.
+
+Run the script with:
+
+```bash
+python scripts/fix_plot_saving.py
+```
+
+### Other Scripts
+
+See individual script comments for usage details.
 
 ## parse_tcx.py
 
 Parses Garmin TCX files into pandas DataFrames.
 
 **Usage:**
-```python
-from parse_tcx import parse_tcx_to_df
-
-# Parse a TCX file
-df, session_total_sec, sessions_avg_hr, session_max_hr = parse_tcx_to_df('data/58-d.tcx')
 ```
-
-## update_notebooks.py
-
-Creates new user-specific notebooks from the template notebook.
-
-**Usage:**
-```bash
-# Create notebooks for specific users
-python scripts/update_notebooks.py 58 59 60
-
-# Force overwrite existing notebooks
-python scripts/update_notebooks.py --force 58 59 60
-```
-
-## update_existing_notebooks.py
-
-Updates existing user notebooks with the code from user_58 while preserving the user IDs.
-
-**Usage:**
-```bash
-# Update all existing user notebooks
-python scripts/update_existing_notebooks.py
-
-# List notebooks without updating them
-python scripts/update_existing_notebooks.py --list-only
-
-# Force update even if TCX or chart files are missing
-python scripts/update_existing_notebooks.py --force
-
-# Skip creating backup files
-python scripts/update_existing_notebooks.py --no-backup
-```
-
-## Workflow
-
-1. Use `parse_tcx.py` to extract heart rate data from TCX files
-2. Use `update_notebooks.py` to create new user notebooks from the template
-3. Use `update_existing_notebooks.py` to update existing user notebooks with improved code
-
-## Requirements
-
-These scripts require the following Python packages:
-- pandas
-- numpy
-- matplotlib
-- ipywidgets 
