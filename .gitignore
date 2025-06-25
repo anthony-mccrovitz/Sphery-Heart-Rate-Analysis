@@ -14,10 +14,6 @@ __pycache__/
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
-# Output directories
-output/plots/
-output/processed/
-
 # OS specific files
 .DS_Store
 .DS_Store?
