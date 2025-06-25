@@ -1,0 +1,4 @@
+user_id,gender,circuit_type,station_number,station_name,session_start_time,session_end_time,session_duration_min,session_avg_hr,session_max_hr,station_start_time,station_end_time,station_duration_min,station_avg_hr,station_max_hr,motivation,fun,subjective_exertion,sports_exp,gaming_exp,data_quality,notes
+66,NA,NA,1,NA,2025-04-06 10:33:23+00:00,2025-04-06 11:18:11+00:00,44.8,144.7605633802817,182,2025-04-06 10:35:17+00:00,2025-04-06 10:45:57+00:00,10.666666666666666,156.76470588235293,180,NA,NA,NA,NA,NA,Good,
+66,NA,NA,2,NA,2025-04-06 10:33:23+00:00,2025-04-06 11:18:11+00:00,44.8,144.7605633802817,182,2025-04-06 10:49:07+00:00,2025-04-06 10:59:09+00:00,10.033333333333333,171.54761904761904,182,NA,NA,NA,NA,NA,Good,
+66,NA,NA,3,NA,2025-04-06 10:33:23+00:00,2025-04-06 11:18:11+00:00,44.8,144.7605633802817,182,2025-04-06 11:01:13+00:00,2025-04-06 11:12:20+00:00,11.116666666666667,125.63333333333334,152,NA,NA,NA,NA,NA,Good,
