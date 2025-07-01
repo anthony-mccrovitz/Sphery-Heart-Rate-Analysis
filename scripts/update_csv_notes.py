@@ -13,7 +13,7 @@ def get_comprehensive_data_quality(user_id):
     """Generate comprehensive data quality description based on user ID."""
     
     # Low quality data users (identified from previous analysis)
-    low_quality_users = [3, 6, 10, 20]
+    low_quality_users = [3, 6, 10, 20, 36,41,48, 69]
     
     if user_id in low_quality_users:
         return (
@@ -37,7 +37,7 @@ def get_comprehensive_notes(user_id):
     """Generate comprehensive notes based on user ID."""
     
     # Low quality data users
-    low_quality_users = [3, 6, 10, 20]
+    low_quality_users = [3, 6, 10, 20, 36, 41, 48, 69]
     
     if user_id in low_quality_users:
         return (
